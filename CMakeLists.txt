@@ -1,0 +1,10 @@
+cmake_minimum_required(VERSION 3.19)
+project(i2b)
+set(CMAKE_CXX_STANDARD 23)
+set(CMAKE_C_STANDARD 17)
+set(CMAKE_C_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+add_executable(i2b src/main.cpp)
+
+find_path(STB_INCLUDE_DIRS "stb_c_lexer.h")
+target_include_directories(i2b PRIVATE ${STB_INCLUDE_DIRS})
